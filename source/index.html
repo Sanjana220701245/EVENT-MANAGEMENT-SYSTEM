@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Event Management</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <img src="logo2.png" alt="logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="register">
+                <a href="contact.html">Register</a>
+            </div>
+        </div>
+        <div id="slider">
+            <div class="slide" style="background-image: url('images/image5.jpg');"></div>
+            <div class="slide" style="background-image: url('images/image1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/image3.png');"></div>
+            <div class="slide" style="background-image: url('images/image2.jpg');"></div>
+            <div class="slide" style="background-image: url('images/image4.jpg');"></div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll("#slider .slide");
+    let currentSlide = 0;
+    let slideCount = slides.length;
+
+    function showNextSlide() {
+        anime({
+            targets: slides[currentSlide],
+            opacity: 0,
+            duration: 1000,
+            easing: 'easeOutQuad',
+            complete: function() {
+                slides[currentSlide].style.zIndex = 1;
+            }
+        });
+
+        currentSlide = (currentSlide + 1) % slideCount;
+
+        anime({
+            targets: slides[currentSlide],
+            opacity: 1,
+            duration: 1000,
+            easing: 'easeInQuad',
+            begin: function() {
+                slides[currentSlide].style.zIndex = 2;
+            }
+        });
+    }
+
+    slides[currentSlide].style.opacity = 1;
+    slides[currentSlide].style.zIndex = 2;
+
+    setInterval(showNextSlide, 5000);
+});
+document.addEventListener("DOMContentLoaded", function() {
+            anime({
+                targets: '.content',
+                opacity: [0, 1],  // Fade in from transparent to fully visible
+                translateY: [50, 0],  // Slide up from 50 pixels below to its original position
+                duration: 1500,  // Duration of the animation in milliseconds
+                easing: 'easeOutQuad',  // Easing function
+                delay: 2500  // Delay before the animation starts, in milliseconds
+            });
+        });
+        </script>
+        <div class="content">
+            <p>
+                <span class="highlight">Elite Events</span> is known for planning and designing <span class="emphasis">exceptional</span> events. We have created a planning experience that is as thorough as it is seamless, bringing a customized and tailored planning experience to those who value the <span class="emphasis">fine art</span> of hosting, and desire to create an approachable, detail rich, <span class="emphasis">timeless</span> wedding celebration.
+            </p>
+            <p>
+                We provide an unparalleled level of <span class="emphasis">personalized service</span> and attention to detail, allowing us to fully understand the intricacies of what makes your relationship unique to you as a couple, and limit our bookings to ensure we are able to uphold our incredibly high standards of service. We are so excited you are here, and cannot wait to meet you and begin creating a celebration as special as your love story.
+            </p>
+        </div>
+        <section class="social-section">
+            <h2 class="section-title">Stay Social</h2>
+            <h3 class="section-subtitle">Follow Us On Instagram</h3>
+            <div class="image-gallery">
+                <img src="images/pic1.jpg" alt="Event Image 1">
+                <img src="images/pic2.jpg" alt="Event Image 2">
+                <img src="images/pic3.jpg" alt="Event Image 3">
+                <img src="images/pic4.jpg" alt="Event Image 4">
+                <img src="images/pic5.jpg" alt="Event Image 5">
+            </div>
+        </section>
+        <footer class="footer">
+                <div class="logo">
+                <img src="logo1.png" alt="Company Logo" style="align-items: center;">
+                <p id="p1">COPYRIGHT © 2024 ELITE EVENTS</p>
+                </div>
+        </footer>
+        </body>
+</html>

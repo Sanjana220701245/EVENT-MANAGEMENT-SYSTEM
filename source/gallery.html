@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f2ec;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0;
+    animation: fadeIn 4s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-family: 'Serif', serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #6f6b5f;
+    position: relative;
+    padding: 10px 20px;
+    border: 2px solid #6f6b5f;
+    background-color: #f9f7f3;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #6f6b5f;
+    color: #fff;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #6f6b5f;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.6s forwards;
+    animation-delay: calc(var(--delay) * 0.2s);
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: translateY(-10px);
+}
+
+.caption {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #6f6b5f;
+    background-color: #d3c4b2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-item:nth-child(1) {
+    --delay: 1;
+}
+
+.gallery-item:nth-child(2) {
+    --delay: 2;
+}
+
+.gallery-item:nth-child(3) {
+    --delay: 3;
+}
+/* Contact Section */
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c8a793;
+    padding: 50px;
+    margin-top: 40px;
+}
+
+.contact-content {
+    flex: 1;
+    max-width: 45%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box {
+    background-color: #fff;
+    padding: 40px;height: 450px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    border-radius: 5px; /* Optional: gives rounded corners */
+    text-align: center; 
+    padding-top: 30%;
+}
+
+.contact-content h2 {
+    font-family: 'Serif', serif;
+    font-size: 24px;
+    color: #3d3529;
+    letter-spacing: 1.5px;
+    margin: 0; /* Removes default margin */
+}
+
+.contact-content p {
+    font-size: 22px;
+    color: #3d3529;
+    margin: 20px 0;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.contact-image {
+    flex: 1;
+    max-width: 45%;
+    padding: 20px;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+    display: block;
+}
+/* Lightbox default styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+/* Lightbox image */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Caption text */
+.lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+@keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+</style>
+</head>
+<body>
+    <div class="header">
+            <div class="logo">
+                <img src="logo2.png" alt="logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="register">
+                <a href="contact.html">Register</a>
+            </div>
+        </div>
+        <div id="slider">
+            <div class="slide" style="background-image: url('images/g1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/g2.png');"></div>
+            <div class="slide" style="background-image: url('images/g3.png');"></div>
+            <div class="slide" style="background-image: url('images/g4.jpg');"></div>
+            <div class="slide" style="background-image: url('images/g5.jpg');"></div>
+        </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>GALLERY</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="gallery.html">WEDDINGS</a></li>
+                    <li><a href="ngallery.html">CORPORATE & SOCIAL / NON-PROFIT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- First Row -->
+        <div class="gallery">
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/pic4.jpg" alt="Abby and Beau">
+                <div class="caption">ABBY + BEAU</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/pic1.jpg" alt="Alanna and Ben">
+                <div class="caption">ALANNA + BEN</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/pic6.png" alt="Alix and Andrew">
+                <div class="caption">ALIX + ANDREW</div>
+            </div>
+            <!-- Lightbox Container -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox();">
+                <span class="close">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
+        <br>
+        <!-- Second Row -->
+        <div class="gallery">
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/pic3.jpg" alt="LUCY + JAMES">
+                <div class="caption">LUCY + JAMES</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/e3.jpg" alt="EMMA + LIAM">
+                <div class="caption">EMMA + LIAM</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/pic2.jpg" alt="AVA + NOAH">
+                <div class="caption">AVA + NOAH</div>
+            </div>
+            <!-- Lightbox Container -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox();">
+                <span class="close">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
+        <br>
+        <!-- Third Row -->
+        <div class="gallery">
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/e8.jpg" alt="OLIVIA + BEN">
+                <div class="caption">OLIVIA + BEN</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/image6.jpg" alt="SOPHIA + JACK">
+                <div class="caption">SOPHIA + JACK</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this);">
+                <img src="images/pic5.png" alt="GRACE + ALEX">
+                <div class="caption">GRACE + ALEX</div>
+            </div>
+            <!-- Lightbox Container -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox();">
+                <span class="close">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
+    </div>
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="contact-content">
+        <div class="content-box">
+            <h2>CONNECT</h2>
+            <p>Let us help you plan your perfect event!</p>
+            <a href="contact.html" class="contact-button">Get in Touch</a>
+        </div>
+    </div>
+    <div class="contact-image">
+        <img src="images/pic7.png" alt="Event Image">
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll("#slider .slide");
+    let currentSlide = 0;
+    let slideCount = slides.length;
+
+    function showNextSlide() {
+        anime({
+            targets: slides[currentSlide],
+            opacity: 0,
+            duration: 1000,
+            easing: 'easeOutQuad',
+            complete: function() {
+                slides[currentSlide].style.zIndex = 1;
+            }
+        });
+
+        currentSlide = (currentSlide + 1) % slideCount;
+
+        anime({
+            targets: slides[currentSlide],
+            opacity: 1,
+            duration: 1000,
+            easing: 'easeInQuad',
+            begin: function() {
+                slides[currentSlide].style.zIndex = 2;
+            }
+        });
+    }
+
+    slides[currentSlide].style.opacity = 1;
+    slides[currentSlide].style.zIndex = 2;
+
+    setInterval(showNextSlide, 5000);
+});
+
+function openLightbox(element) {
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImage = document.getElementById("lightbox-image");
+    var lightboxCaption = document.getElementById("lightbox-caption");
+
+    var img = element.getElementsByTagName("img")[0];
+    var captionText = element.getElementsByClassName("caption")[0].innerHTML;
+
+    lightboxImage.src = img.src;
+    lightboxCaption.innerHTML = captionText;
+    lightbox.style.display = "block";
+}
+
+function closeLightbox() {
+    var lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+}
+</script>
+</body>
+</html>
+</body>
+</html>

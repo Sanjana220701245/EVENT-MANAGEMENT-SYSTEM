@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Event Details</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/c1.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.event-details {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.header h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #c1c1c1;
+}
+
+.tab-button.active {
+    background-color: #999;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content h2 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tab-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-content li {
+    margin-bottom: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="event-details">
+        <div class="header">
+            <h1>Social Event Details</h1>
+        </div>
+
+        <div class="content-container">
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab(event, 'schedule')">Schedule</button>
+                <button class="tab-button" onclick="openTab(event, 'speakers')">Speakers</button>
+                <button class="tab-button" onclick="openTab(event, 'tickets')">Ticket Options</button>
+            </div>
+
+            <div id="schedule" class="tab-content">
+                <h2>Day 1: Welcome Reception</h2>
+            <p><strong>5:00 PM - 7:00 PM:</strong> Guests Arrive and Check-In</p>
+            <p><strong>7:00 PM - 8:30 PM:</strong> Welcome Drinks and Light Bites</p>
+            <p><strong>8:30 PM - 10:00 PM:</strong> Welcome Speech and Ice-Breaker Activities</p>
+            <p><strong>10:00 PM - 11:30 PM:</strong> Evening Entertainment (Live Band/DJ)</p>
+
+            <h2>Day 2: Main Event</h2>
+            <p><strong>10:00 AM - 12:00 PM:</strong> Morning Brunch and Networking</p>
+            <p><strong>12:00 PM - 1:30 PM:</strong> Panel Discussion: The Art of Socializing</p>
+            <p><strong>1:30 PM - 2:30 PM:</strong> Lunch Break</p>
+            <p><strong>2:30 PM - 4:00 PM:</strong> Group Activities and Games</p>
+            <p><strong>4:00 PM - 6:00 PM:</strong> Break and Refreshments</p>
+            <p><strong>6:00 PM - 8:00 PM:</strong> Evening Gala and Awards Ceremony</p>
+            <p><strong>8:00 PM - 11:00 PM:</strong> Dance Party with Live DJ</p>
+            </div>
+
+            <div id="speakers" class="tab-content">
+                <h2>Speakers</h2>
+            <p><strong>Jane Smith:</strong> Event Coordinator & Social Etiquette Expert</p>
+            <p><strong>John Doe:</strong> Networking Specialist & Motivational Speaker</p>
+            <p><strong>Emily Johnson:</strong> Relationship Building Consultant</p>
+            <p><strong>Michael Lee:</strong> Social Media Strategist</p>
+            </div>
+
+            <div id="tickets" class="tab-content">
+                <h2>Ticket Options</h2>
+            <p><strong>General Admission: $50</strong></p>
+            <p>Includes access to all sessions and activities.</p>
+            <p>Complimentary welcome drinks and snacks.</p>
+
+            <p><strong>VIP Admission: $120</strong></p>
+            <p>Priority access to all sessions and activities.</p>
+            <p>Exclusive access to the VIP lounge with premium refreshments.</p>
+            <p>Complimentary event merchandise.</p>
+
+            <p><strong>Group Admission: $200 (for 5 people)</strong></p>
+            <p>Discounted rate for group bookings.</p>
+            <p>Access to all sessions and activities.</p>
+            <p>Group photo session with speakers.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tabbuttons;
+
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Automatically open the first tab on page load
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.tab-button').click();
+});
+
+</script>
+</body>
+</html>
+
+

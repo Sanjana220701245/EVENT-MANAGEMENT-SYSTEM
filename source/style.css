@@ -1,0 +1,707 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    width: 100%;
+    height: 110px;
+    background-color: rgba(248, 245, 245, 0.966);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; 
+    top: 0;
+    left: 0;
+    z-index: 220;
+}
+
+/* Styles for the logo */
+.logo img {
+    max-width: 150px; /* Increase the max-width to make the logo larger */
+    height: 120px; /* Maintain the aspect ratio */
+}
+/* Responsive styles for the logo */
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 150px; /* Adjust size for smaller screens*/ 
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px; /* Further adjust size for very small screens */
+    }
+}
+
+.menu ul
+{
+    display: flex;
+    align-items: center;
+}
+.menu ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 2px 20px;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.menu ul li a:hover
+{
+    border-bottom: 4px solid rgba(218, 165, 32, 0.76);
+    transition: 0.4s;
+}
+.register a
+{
+    text-decoration: none;
+    color: black;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px 10px;
+    border: 2px solid rgba(218, 165, 32, 0.76);
+    text-align: right;
+}
+.register a:hover
+{
+    background-color: rgba(218, 165, 32, 0.76);
+    transition: 0.6s;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: visible;
+}
+
+#slider {
+    position: relative;
+    height: 90vh;
+    width: 100vw;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content {
+    max-width: 800px;
+    width: 60%; /* Initial narrower width */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    opacity: 0; /* Start invisible */
+}
+.content p {
+    font-family: 'Didot Regular';
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.6em;
+    color: #333;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.emphasis {
+    font-style:italic;
+    letter-spacing: 0.05em;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f5f3;
+    color: #333;
+    text-align: center;
+}
+
+.social-section {
+    padding: 50px 0;
+    background-color: #f9f5f3;
+}
+
+.section-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 36px;
+    font-weight: normal;
+    color: #a8957d;
+    margin-bottom: 30px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.image-gallery img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    padding: 20px;
+    background-color: #f9f5f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: black;
+    border-top: 1px solid #e0e0e0;
+    position: relative; /* Ensures relative positioning for the text */
+}
+
+.footer .logo {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+}
+
+.footer .p1 {
+    text-align: center;
+    margin-top: 20px; 
+}
+/*HOME*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    background-color: #fff;
+    color: #eee;
+    font-family: Poppins;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+}
+
+/* carousel */
+.carousel{
+    height: 100vh;
+    margin-top: -110px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+    padding-left: 30%;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+.carousel .list .item .content-wrapper {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 30%;
+    height: 80%;
+    transform: translateX(-10%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carousel .list .item:nth-child(1) .content-wrapper {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(20px);
+    visibility: visible;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+
+.carousel .list .item .content {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    color: #000;
+    text-shadow: 0 5px 10px #0004;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.7); 
+    top: 10%;
+    visibility: visible;
+    padding: 20px;
+}
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item .content{
+    color: #000;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;padding-top: 0%;
+    width: auto;height: 12%;
+}
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+.thumbnail .item .content .description{
+    font-weight: 300;
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1.8s!important;
+}
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+/* COUNTDOWN TIMER*/
+/* Ensure the parent container is a flex container */
+.parent-container {
+    display: flex;
+    justify-content: flex-end; 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);
+}
+
+.countdown-container {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    background: linear-gradient(135deg, #d8a6d5, #f8cdda);
+    /*background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);*/
+    background-size: cover; 
+    background-position: center; 
+    height: 20%;
+    background-repeat: no-repeat; 
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    margin-top: 20%;
+}
+
+.countdown {
+    background: rgba(53, 49, 49, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 100px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.countdown:hover {
+    transform: scale(1.1);
+}
+
+.time {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.label {
+    height: 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    /*justify-content: flex-end; Aligns the countdown-container and timer-text to the right */
+    align-items: center; /* Centers items vertically */
+    height: 100vh;
+    background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.countdown-container {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    background: linear-gradient(135deg, #d8a6d5, #f8cdda);
+    height: 20%;
+    background-repeat: no-repeat; 
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+}
+
+.countdown {
+    background: rgba(53, 49, 49, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 100px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.countdown:hover {
+    transform: scale(1.1);
+}
+
+.time {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.label {
+    height: 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timer-text {
+    justify-content: flex-end;
+    margin-right: 20px; 
+}
+
+.timer-text h3 {
+    margin: 0;
+    font-size: 40px;
+    color: #a12391;
+    font-weight: 500;
+    
+}
+.row .card .h1{
+    color: #a12391;
+  }
+  .card{
+    margin: 0 auto;color: #a12391;
+    padding: 2em;
+    width: 300px;
+    /*background: #1c1f2b;background: rgba(168, 156, 156, 0.5);*/
+    background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /*background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);*/
+    background-image: conic-gradient(from var(--angle), #b3a2af, #db9dce, #ad5ea3, #b15c8d, #a12391);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    /*background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);*/
+}
+  .card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+  .marq{
+    color: #000;
+  }
+  .row .card .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    margin-top: 20px;
+    padding-left: 25%;
+    color: #a12391;
+    background-color: #a12391;
+}

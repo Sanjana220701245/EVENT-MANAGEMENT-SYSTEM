@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Event Details</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/c1.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.event-details {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.header h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #c1c1c1;
+}
+
+.tab-button.active {
+    background-color: #999;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content h2 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tab-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-content li {
+    margin-bottom: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="event-details">
+        <div class="header">
+            <h1>Corporate Event Details</h1>
+        </div>
+
+        <div class="content-container">
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab(event, 'schedule')">Schedule</button>
+                <button class="tab-button" onclick="openTab(event, 'speakers')">Speakers</button>
+                <button class="tab-button" onclick="openTab(event, 'tickets')">Ticket Options</button>
+            </div>
+
+            <div id="schedule" class="tab-content">
+                <h2>Schedule</h2>
+                <p><strong>Day 1: Innovation and Leadership</strong></p>
+                <ul>
+                    <li><strong>09:00 AM - 10:30 AM:</strong> Opening Keynote Address<br> <em>Speaker: Jane Doe, CEO of FutureTech</em><br> <em>Topic: The Future of Technology and Innovation</em></li>
+                    <li><strong>10:30 AM - 11:00 AM:</strong> Networking Break</li>
+                    <li><strong>11:00 AM - 12:30 PM:</strong> Panel Discussion<br> <em>Topic: Navigating the Modern Business Landscape<br> Panelists: John Smith, CTO of Innovate Inc.; Lisa Brown, COO of Tech Solutions</em></li>
+                    <li><strong>12:30 PM - 01:30 PM:</strong> Lunch Break</li>
+                    <li><strong>01:30 PM - 03:00 PM:</strong> Workshop<br> <em>Topic: Digital Transformation Strategies<br> Facilitator: Michael Johnson, Digital Transformation Expert</em></li>
+                    <li><strong>03:00 PM - 03:30 PM:</strong> Coffee Break</li>
+                    <li><strong>03:30 PM - 05:00 PM:</strong> Keynote Presentation<br> <em>Speaker: Sarah Lee, Founder of Visionary Enterprises<br> Topic: Leading Change in a Fast-Paced World</em></li>
+                </ul>
+                <p><strong>Day 2: Growth and Networking</strong></p>
+                <ul>
+                    <li><strong>09:00 AM - 10:30 AM:</strong> Opening Keynote Address<br> <em>Speaker: David Wilson, Founder of Growth Partners<br> Topic: Scaling Your Business Effectively</em></li>
+                    <li><strong>10:30 AM - 11:00 AM:</strong> Networking Break</li>
+                    <li><strong>11:00 AM - 12:30 PM:</strong> Workshop<br> <em>Topic: Building Strong Business Relationships<br> Facilitator: Emily Davis, Networking Expert</em></li>
+                    <li><strong>12:30 PM - 01:30 PM:</strong> Lunch Break</li>
+                    <li><strong>01:30 PM - 03:00 PM:</strong> Roundtable Discussion<br> <em>Topic: Future Trends in Corporate Strategy<br> Moderator: Robert Martinez, Corporate Strategist</em></li>
+                    <li><strong>03:00 PM - 03:30 PM:</strong> Coffee Break</li>
+                    <li><strong>03:30 PM - 05:00 PM:</strong> Closing Keynote Address<br> <em>Speaker: Anna Garcia, CEO of Strategy Inc.<br> Topic: Embracing Innovation for Long-Term Success</em></li>
+                </ul>
+            </div>
+
+            <div id="speakers" class="tab-content">
+                <h2>Speakers</h2>
+                <p><strong>Jane Doe:</strong> CEO of FutureTech, a visionary leader with over 20 years of experience in technology and innovation.</p>
+                <p><strong>John Smith:</strong> CTO of Innovate Inc., with deep insights into modern business challenges and solutions.</p>
+                <p><strong>Lisa Brown:</strong> COO of Tech Solutions, a strategic operations expert known for driving efficiency and growth.</p>
+                <p><strong>Michael Johnson:</strong> Digital Transformation Expert, specializing in helping businesses navigate digital changes.</p>
+                <p><strong>Sarah Lee:</strong> Founder of Visionary Enterprises, renowned for inspirational leadership and guiding organizations through change.</p>
+                <p><strong>David Wilson:</strong> Founder of Growth Partners, an expert in scaling businesses and strategic development.</p>
+                <p><strong>Emily Davis:</strong> Networking Expert, known for strategies in building valuable business relationships.</p>
+                <p><strong>Robert Martinez:</strong> Corporate Strategist, offering insights into corporate planning and future trends.</p>
+                <p><strong>Anna Garcia:</strong> CEO of Strategy Inc., a leading figure in business strategy and innovation.</p>
+            </div>
+
+            <div id="tickets" class="tab-content">
+                <h2>Ticket Options</h2>
+                <p><strong>General Admission:</strong> Access to all sessions, workshops, and keynote addresses. Includes networking opportunities, lunch, and coffee breaks.<br> Early Bird Price: $299<br> Standard Price: $399</p>
+                <p><strong>VIP Pass:</strong> Includes all General Admission benefits plus exclusive VIP networking event, reserved seating, and meet-and-greet with speakers.<br> Early Bird Price: $499<br> Standard Price: $599</p>
+                <p><strong>Group Package:</strong> Discounted rates for groups of 5 or more, including all General Admission benefits. Group rates available upon request.</p>
+                <p><strong>Student Pass:</strong> Access to all sessions, workshops, and keynote addresses, with valid student ID required.<br> Price: $199</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tabbuttons;
+
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Automatically open the first tab on page load
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.tab-button').click();
+});
+
+</script>
+</body>
+</html>

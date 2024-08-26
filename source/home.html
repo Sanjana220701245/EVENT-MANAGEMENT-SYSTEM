@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="register">
+            <a href="contact.html">Register</a>
+        </div>
+    </div>
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+        <div class="item">
+            <img src="images/h4.jpg">
+            <div class="content-wrapper">
+                <div class="background-screen"></div>
+                <div class="content">
+                    <p class="author">FEATURED EVENT</p>
+                    <h1 class="title">MAJESTIC MATRIMONY GALA</h1>
+                    <p class="des">The wedding showcased a grand, traditional ceremony complete with classic touches and heartfelt moments. The reception dazzled with lavish decorations, a sumptuous feast, and lively entertainment. It was a celebration filled with joy and elegance, making it a truly unforgettable experience for all.
+                    </p>
+                    <div class="buttons">
+                        <button onclick="window.location.href='gallery.html';">SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/h1.jpeg">
+            <div class="content-wrapper">
+                <div class="background-screen"></div>
+                <div class="content">
+                    <p class="author">FEATURED EVENT</p>
+                    <h1 class="title">CELESTIAL CELEBRATIONS</h1>
+                    <p class="des">The wedding featured a charming outdoor ceremony surrounded by nature’s beauty, followed by a chic and festive reception. Guests delighted in a range of gourmet dishes and danced the night away to live music. The event was a perfect blend of elegance and fun, leaving everyone with cherished memories.
+                    </p>
+                    <div class="buttons">
+                        <button onclick="window.location.href='gallery.html';">SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/h3.jpg">
+            <div class="content-wrapper">
+                <div class="background-screen"></div>
+                <div class="content">
+                    <p class="author">FEATURED EVENT</p>
+                    <h1 class="title">LUMINOUS LOVE AFFAIR</h1>
+                    <p class="des">The wedding was a beautifully orchestrated celebration, marked by a heartfelt ceremony and a lively reception. Guests enjoyed a delightful evening with exquisite cuisine, elegant decor, and joyous dancing. The couple's love and happiness were palpable, making it a memorable occasion for all who attended.
+                    </p>
+                    <div class="buttons">
+                        <button onclick="window.location.href='gallery.html';">SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/h2.jpeg">
+            <div class="content-wrapper">
+                <div class="background-screen"></div>
+                <div class="content">
+                    <p class="author">FEATURED EVENT</p>
+                    <h1 class="title">ROMANTIC BEACH NUPTIALS</h1>
+                    <p class="des">The wedding unfolded with a romantic candlelit ceremony, followed by a sophisticated reception in a stunning venue. Guests were treated to a delightful evening of fine dining, heartfelt speeches, and lively dancing. The event was a seamless blend of intimacy and grandeur, creating lasting memories for everyone involved.
+                    </p>
+                    <div class="buttons">
+                        <button onclick="window.location.href='gallery.html';">SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="images/h4.jpg">
+                <div class="content">
+                    <div class="title">
+                        MAJESTIC MATRIMONY GALA
+                    </div>
+                    <div class="description">
+                        Wedding
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/h1.jpeg">
+                <div class="content">
+                    <div class="title">
+                        CELESTIAL CELEBRATIONS
+                    </div>
+                    <div class="description">
+                        Wedding
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/h3.jpg">
+                <div class="content">
+                    <div class="title">
+                        LUMINOUS LOVE AFFAIR
+                    </div>
+                    <div class="description">
+                        Wedding
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/h2.jpeg">
+                <div class="content">
+                    <div class="title">
+                        ROMANTIC BEACH NUPTIALS
+                    </div>
+                    <div class="description">
+                        Wedding
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+    <!--<div class="countdown-container">
+        <div class="countdown">
+            <div class="time" id="days">00</div>
+            <div class="label">Days</div>
+        </div>
+        <div class="countdown">
+            <div class="time" id="hours">00</div>
+            <div class="label">Hours</div>
+        </div>
+        <div class="countdown">
+            <div class="time" id="minutes">00</div>
+            <div class="label">Minutes</div>
+        </div>
+        <div class="countdown">
+            <div class="time" id="seconds">00</div>
+            <div class="label">Seconds</div>
+        </div>
+    </div>-->
+    <div class="background">
+    <div class="parent-container">
+        <div class="timer-text">
+            <h3>Upcoming Event</h3>
+        </div>
+        <div class="countdown-container">
+            <div class="countdown">
+                <div class="time" id="days">00</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="countdown">
+                <div class="time" id="hours">00</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="countdown">
+                <div class="time" id="minutes">00</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="countdown">
+                <div class="time" id="seconds">00</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="card">
+      <h1>Wedding Event Details</h1>
+      <div class="buttons">
+        <button onclick="window.location.href='wedding.html';">VIEW</button></a>
+    </div>
+    </div>
+  
+    <div class="card">
+      <h1>Social Event Details</h1>
+      <div class="buttons">
+        <button onclick="window.location.href='social.html';">VIEW</button></a>
+    </div>
+    </div>
+  
+    <div class="card">
+      <h1>Corporate Event Details</h1>
+      <div class="buttons">
+        <button onclick="window.location.href='corporate.html';">VIEW</button></a>
+    </div>
+    </div>
+</div>
+  </div>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        
+        let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
+
+let carouselDom = document.querySelector('.carousel');
+let SliderDom = carouselDom.querySelector('.carousel .list');
+let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+let timeDom = document.querySelector('.carousel .time');
+
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+
+nextDom.onclick = function(){
+    showSlider('next');    
+}
+
+prevDom.onclick = function(){
+    showSlider('prev');    
+}
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+    next.click();
+}, timeAutoNext)
+function showSlider(type){
+    let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+    
+    if(type === 'next'){
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carouselDom.classList.add('next');
+    }else{
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        carouselDom.classList.add('prev');
+    }
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
+    }, timeRunning);
+
+    clearTimeout(runNextAuto);
+    runNextAuto = setTimeout(() => {
+        next.click();
+    }, timeAutoNext)
+}
+
+// Countdown Timer
+const countdown = () => {
+    const now = new Date().getTime();
+    const eventDate = new Date('Sep 25, 2024 00:00:00').getTime(); // Example date
+
+    const distance = eventDate - now;
+
+    if (distance >= 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+    } else {
+        clearInterval(timerInterval);
+        document.getElementById("timer").innerText = "Event Started";
+    }
+};
+
+const timerInterval = setInterval(countdown, 1000);
+
+    </script>
+</body>
+</html>

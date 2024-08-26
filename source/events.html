@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            min-height: 100vh;
+            top: 110px;
+            color: #a2a5b3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: #1c1f2b;
+        }
+
+        .header {
+            width: 100%;
+            height: 110px;
+            background-color: rgba(248, 245, 245, 0.966);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 220;
+        }
+
+        .logo img {
+            max-width: 150px;
+            height: 120px;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                max-width: 100px;
+            }
+        }
+
+        .menu ul {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 2px 20px;
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+
+        .menu ul li a:hover {
+            border-bottom: 4px solid rgba(218, 165, 32, 0.76);
+            transition: 0.4s;
+        }
+
+        .register a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 12px 10px;
+            border: 2px solid rgba(218, 165, 32, 0.76);
+            text-align: right;
+        }
+
+        .register a:hover {
+            background-color: rgba(218, 165, 32, 0.76);
+            transition: 0.6s;
+        }
+
+        .card {
+            margin: 20px;
+            padding: 2em;
+            width: 300px;
+            /*background: #1c1f2b;*/
+            background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);
+            color: black;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        .card::after, .card::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            /*background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);*/
+            background-image: conic-gradient(from var(--angle), #b3a2af, #db9dce, #ad5ea3, #b15c8d, #a12391);
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 3px;
+            border-radius: 10px;
+            animation: 3s spin linear infinite;
+            /*background-image: linear-gradient(rgba(226, 215, 215, 0.699), rgba(231, 223, 223, 0.699)), url(e9.jpg);*/
+        }
+
+        .card::before {
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .row .card .buttons{
+            display: grid;
+            grid-template-columns: repeat(2, 130px);
+            grid-template-rows: 40px;
+            margin-top: 20px;
+            padding-left: 20%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="register">
+            <a href="contact.html">Register</a>
+        </div>
+    </div>
+
+    
+    <div class="background-container"></div>
+
+    <div class="row">
+        <div class="card">
+            <h1 style="color: black;">Wedding Details</h1>
+            <p>Join us for a day of love and celebration as two hearts become one. The ceremony will be followed by a delightful reception with dining and dancing.  Enjoy heartfelt moments and joyous festivities throughout this special occasion.</p>
+            <div class="buttons">
+                <button onclick="window.location.href='wedding.html';">SEE MORE</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1 style="color: black;">Social Event Details</h1>
+            <p>Experience a vibrant gathering full of engaging activities and lively interactions. Enjoy themed entertainment, delicious food, and the chance to connect with others in a festive atmosphere. Celebrate and make lasting memories.</p>
+            <div class="buttons">
+                <button onclick="window.location.href='social.html';">SEE MORE</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1 style="color: black;">Corporate Event</h1>
+            <p>Join us for a professionally curated event designed to foster networking and collaboration. Engage in insightful discussions, attend informative sessions, and connect with industry leaders. Enhance knowledge,expand network.</p>
+            <div class="buttons">
+                <button onclick="window.location.href='corporate.html';">SEE MORE</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

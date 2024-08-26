@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Event Details</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/c1.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.event-details {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.header h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #c1c1c1;
+}
+
+.tab-button.active {
+    background-color: #999;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content h2 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tab-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-content li {
+    margin-bottom: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="event-details">
+        <div class="header">
+            <h1>Wedding Event Details</h1>
+        </div>
+
+        <div class="content-container">
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab(event, 'schedule')">Schedule</button>
+                <button class="tab-button" onclick="openTab(event, 'speakers')">Speakers</button>
+                <button class="tab-button" onclick="openTab(event, 'tickets')">Ticket Options</button>
+            </div>
+
+            <div id="schedule" class="tab-content">
+                <h2>Schedule</h2>
+                <p><strong>Morning Ceremony:</strong></p>
+                <ul>
+                    <li><strong>9:00 AM - 9:30 AM:</strong> Guest Arrival & Seating</li>
+                    <li><strong>9:30 AM - 10:00 AM:</strong> Bride & Groom Entrance</li>
+                    <li><strong>10:00 AM - 11:00 AM:</strong> Wedding Ceremony</li>
+                    <li><strong>11:00 AM - 11:30 AM:</strong> Vows Exchange & Ring Ceremony</li>
+                    <li><strong>11:30 AM - 12:00 PM:</strong> Family Photos & Group Pictures</li>
+                </ul>
+                <p><strong>Afternoon Reception:</strong></p>
+                <ul>
+                    <li><strong>12:30 PM - 1:30 PM:</strong> Cocktail Hour & Hors d'oeuvres</li>
+                    <li><strong>1:30 PM - 2:30 PM:</strong> Reception Dinner</li>
+                    <li><strong>2:30 PM - 3:00 PM:</strong> Speeches & Toasts</li>
+                    <li><strong>3:00 PM - 4:00 PM:</strong> First Dance & Open Dance Floor</li>
+                    <li><strong>4:00 PM - 4:30 PM:</strong> Cake Cutting Ceremony</li>
+                    <li><strong>4:30 PM - 5:00 PM:</strong> Farewell & Send-Off</li>
+                </ul>
+            </div>
+
+            <div id="speakers" class="tab-content">
+                <h2>Speakers</h2>
+                <p><strong>Best Man:</strong> John Anderson will share his heartfelt and humorous anecdotes, giving insights into the groom's life and their friendship. John's speech is sure to bring a blend of laughter and tears.</p>
+                <p><strong>Maid of Honor:</strong> Emily Davis, the bride’s closest friend, will deliver a touching speech, sharing the bride’s journey from childhood to this special day. Emily’s words will capture the essence of their friendship and the love story of the couple.</p>
+                <p><strong>Parents of the Bride & Groom:</strong> Mr. and Mrs. Smith and Mr. and Mrs. Johnson will take turns sharing their blessings and well wishes for the newlyweds. Their speeches will reflect the love and support that have guided the couple to this joyous occasion.</p>
+            </div>
+
+            <div id="tickets" class="tab-content">
+                <h2>Ticket Options</h2>
+                <p><strong>General Admission:</strong> Price: $50. Includes access to the wedding ceremony and reception. Guests will enjoy a full day of celebration, including meals and entertainment.</p>
+                <p><strong>VIP Admission:</strong> Price: $100. Includes all General Admission benefits plus priority seating during the ceremony, a complimentary cocktail during the reception, and a special gift from the couple.</p>
+                <p><strong>Family & Friends Package:</strong> Price: $250 (for 4 people). This package offers a group discount for families and close friends, including all General Admission benefits and a reserved table during the reception.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tabbuttons;
+
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Automatically open the first tab on page load
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.tab-button').click();
+});
+
+</script>
+</body>
+</html>
+
